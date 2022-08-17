@@ -34,5 +34,5 @@ Here are some resources I used to create this project.
 ### Folium:
 * https://python-visualization.github.io/folium/quickstart.html
 
-### GeoJSON geometry for shape of each state
+### GeoJSON geometry for the shape of each state
 * https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json
