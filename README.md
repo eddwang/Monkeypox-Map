@@ -9,6 +9,7 @@ This Python application uses BeautifulSoup, Selenium, and RegEx to read the HTML
 ## Table of Contents:
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Future Ideas](#future-ideas)
 * [Credits](#credits)
 
 ## Technologies:
