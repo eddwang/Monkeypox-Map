@@ -6,6 +6,11 @@ This Python application uses BeautifulSoup, Selenium, and RegEx to read the HTML
 
 I hope to implement pop-ups whenever the user hovers over a state to display the confirmed cases of the corresponding state.
 
+## Table of Contents:
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Credits](#credits)
+
 ## Technologies:
 * BeautifulSoup version: 4.11.1
 * Selenium version: 3.141.0
