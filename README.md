@@ -27,7 +27,7 @@ $ pip install selenium
 $ pip install pandas
 $ pip install folium
 ```
-Download ChromeDriver for Selenium [here](https://chromedriver.chromium.org/downloads).
+Download ChromeDriver for Selenium [here](https://chromedriver.chromium.org/downloads), then add ChromeDriver.exe to PATH.
 
 ## Future Ideas:
 I hope to implement pop-ups whenever the user hovers over a state to display the confirmed cases of the corresponding state. I also hope to add another layer to the map that displays confirmed cases per capita.
