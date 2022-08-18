@@ -2,7 +2,7 @@
 Utilizes CDC's monkeypox data to create a choropleth map of the confirmed cases in the US
 
 ## Description:
-This Python application uses BeautifulSoup, Selenium, and RegEx to read the HTML of the [CDC's 2022 US Monkeypox Map](https://www.cdc.gov/poxvirus/monkeypox/response/2022/us-map.html) to retrieve the number of confirmed monkeypox cases for each state. The corresponding data is then mapped using Pandas, Folium, and WebBrowser. This application also uses OS and Platform libraries to assist in Windows/Mac cross-platform compatibility.
+This Python application uses BeautifulSoup, Selenium, and RegEx to read the HTML of the [CDC's 2022 US Monkeypox Map](https://www.cdc.gov/poxvirus/monkeypox/response/2022/us-map.html) to retrieve the number of confirmed monkeypox cases for each state. The corresponding data is then mapped using Pandas, Folium, and WebBrowser. This application also uses OS and Platform libraries to assist in Windows/MacOS cross-platform compatibility.
 
 ![Sample Image](./images/sample_image.png)
 
