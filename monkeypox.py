@@ -4,6 +4,8 @@ import re
 import pandas as pd
 import folium
 import webbrowser
+import os
+import platform
 
 
 def get_data():
@@ -16,9 +18,18 @@ def get_data():
             Key is state and value is case amount. Dictionary contains monkeypox cases for each state in alpha order
                 ie. {'Alabama': 20, 'Alaska': 40, ...}
     """
+    # Save ChromeDriver to PATH
+    if platform.system() == "Windows":
+        driver_name = "chromedriver.exe"
+    elif platform.system() == 'Darwin':
+        driver_name = "chromedriver"
+    project_root = os.path.abspath(os.path.dirname(__file__))
+    driver_bin = os.path.join(project_root, driver_name)
+
     # Creates webpage and retrieves html text
     url = "https://www.cdc.gov/poxvirus/monkeypox/response/2022/us-map.html"
-    driver = webdriver.Chrome('chromedriver.exe')
+    driver = webdriver.Chrome(executable_path=driver_bin)
+    driver.maximize_window()
     driver.get(url)
 
     # Searches for tags in html to find table containing states and cases
@@ -94,20 +105,30 @@ def create_map(updated_date, state_cases_dict):
 
     # Opens new tab with map
     map_usa.save("monkeypox_map.html")
-    webbrowser.open("monkeypox_map.html", new=2)
+    if platform.system() == 'Darwin':
+        file_location = "file://" + os.path.realpath("monkeypox_map.html")
+        webbrowser.get().open(file_location, new=1)
+    elif platform.system() == 'Windows':
+        file_location = "monkeypox_map.html"
+        webbrowser.open(file_location, new=1)
 
 
 def main():
     """ Driver function that calls other functions"""
-    try:
-        data = get_data()
-    except Exception as e:
-        print(f"Could not retrieve data, {e}")
-
+    data = get_data()
     try:
         create_map(data[0], data[1])
     except Exception as e:
-        print(f"Could not create map, {e}")
+        print(e)
+    # try:
+    #     data = get_data()
+    # except Exception as e:
+    #     print(f"Could not retrieve data, {e}")
+
+    # try:
+    #     create_map(data[0], data[1])
+    # except Exception as e:
+    #     print(f"Could not create map, {e}")
 
 
 if __name__ == '__main__':
