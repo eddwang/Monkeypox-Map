@@ -115,20 +115,15 @@ def create_map(updated_date, state_cases_dict):
 
 def main():
     """ Driver function that calls other functions"""
-    data = get_data()
+    try:
+        data = get_data()
+    except Exception as e:
+        print(f"Could not retrieve data, {e}")
+
     try:
         create_map(data[0], data[1])
     except Exception as e:
-        print(e)
-    # try:
-    #     data = get_data()
-    # except Exception as e:
-    #     print(f"Could not retrieve data, {e}")
-
-    # try:
-    #     create_map(data[0], data[1])
-    # except Exception as e:
-    #     print(f"Could not create map, {e}")
+        print(f"Could not create map, {e}")
 
 
 if __name__ == '__main__':
