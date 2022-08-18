@@ -26,6 +26,7 @@ $ pip install bs4
 $ pip install selenium
 $ pip install pandas
 $ pip install folium
+$ pip install lxml
 ```
 Download ChromeDriver for Selenium [here](https://chromedriver.chromium.org/downloads), then add ChromeDriver.exe to PATH.
 
